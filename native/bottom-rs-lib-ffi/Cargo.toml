@@ -1,0 +1,12 @@
+[package]
+name = "bottom_rs_lib_ffi"
+version = "0.0.1"
+edition = "2018"
+
+[lib]
+name = "bottom_rs_lib_ffi"
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+bottom-rs-lib = { path = "../bottom-rs-lib" }
+libc = "0.2.86"
