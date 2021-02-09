@@ -1,5 +1,5 @@
+use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
-use std::ffi::{CString, CStr};
 
 pub trait StrFFI {
     fn to_c_char(&self) -> *const c_char;
