@@ -1,7 +1,6 @@
 library bottom_rs_dart;
 
 import 'dart:ffi';
-import 'dart:typed_data';
 import 'package:bottom_rs_dart/helper.dart';
 import 'package:ffi/ffi.dart';
 

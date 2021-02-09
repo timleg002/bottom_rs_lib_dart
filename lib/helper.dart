@@ -26,13 +26,11 @@ ffi.DynamicLibrary universalLoad() {
       return null;
     }
   }
-  /*
   else if (Platform.isIOS) {
     // iOS is statically linked, so it is the same as the current process.
     return ffi.DynamicLibrary.process();
   }
-  */
-  /*
+  /* //TODO macOS
   else if (Platform.isMacOS) {
     return DynamicLibrary.open('${basePath}libbottom_rs_lib_ffi.dylib');
   }
@@ -43,4 +41,5 @@ ffi.DynamicLibrary universalLoad() {
   else {
     throw _UnsupportedPlatform('${Platform.operatingSystem} is not supported!');
   }
+  return null;
 }
