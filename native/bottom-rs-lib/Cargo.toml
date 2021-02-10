@@ -1,0 +1,20 @@
+[package]
+name = "bottom-rs-lib"
+description = "Fantastic (maybe) library for translating between bottom and human-readable text"
+version = "1.1.1"
+authors = ["Kaylynn <mkaylynn7@gmail.com>, Timotej <timko.leginus@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/timleg002/bottom-rs-lib"
+edition = "2018"
+
+[dependencies]
+anyhow = "1.0.38"
+phf = "0.8.0"
+
+[profile.bench]
+debug = true
+
+[build-dependencies]
+lazy_static = "1.4.0"
+maplit = "1.0.2"
+phf_codegen = "0.8.0"
