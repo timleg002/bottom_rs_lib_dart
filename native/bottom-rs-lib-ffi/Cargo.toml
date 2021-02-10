@@ -5,7 +5,7 @@ edition = "2018"
 
 [lib]
 name = "bottom_rs_lib_ffi"
-crate-type = ["cdylib", "staticlib", "dylib"]
+crate-type = ["rlib", "staticlib", "dylib"]
 
 [dependencies]
 bottom-rs-lib = { path = "../bottom-rs-lib" }

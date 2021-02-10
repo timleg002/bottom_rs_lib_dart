@@ -18,17 +18,17 @@ class _UnsupportedPlatform implements Exception {
 
 /// Loads the dynamic library, to be used in Dart bindings.
 
-ffi.DynamicLibrary universalLoad() {
+ffi.DynamicLibrary universalLoad({String basePath = 'target'}) {
   if (Platform.isAndroid) {
     if(SysInfo.kernelArchitecture == "aarch64") {
-      return ffi.DynamicLibrary.open(
-          'native/bottom-rs-lib-ffi/target/aarch64-linux-android/debug/libbottom_rs_lib_ffi.so');
+        return ffi.DynamicLibrary.open(
+          '${basePath}/aarch64-linux-android/debug/libbottom_rs_lib_ffi.so');
     } else if(SysInfo.kernelArchitecture == "armv7") {
-      return ffi.DynamicLibrary.open(
-          'native/bottom-rs-lib-ffi/target/armv7-linux-androideabi/debug/libbottom_rs_lib_ffi.so');
+        return ffi.DynamicLibrary.open(
+          '${basePath}/armv7-linux-androideabi/debug/libbottom_rs_lib_ffi.so');
     } else if(SysInfo.kernelArchitecture.endsWith("64")) {
-      return ffi.DynamicLibrary.open(
-          'native/bottom-rs-lib-ffi/target/x86_64-linux-android/debug/libbottom_rs_lib_ffi.so');
+        return ffi.DynamicLibrary.open(
+          '${basePath}/x86_64-linux-android/debug/libbottom_rs_lib_ffi.so');
     }
   }
   else if (Platform.isIOS) {
@@ -41,7 +41,7 @@ ffi.DynamicLibrary universalLoad() {
   }
   */
   else if (Platform.isWindows) {
-    return ffi.DynamicLibrary.open('native/bottom-rs-lib-ffi/target/debug/bottom_rs_lib_ffi.dll');
+    return ffi.DynamicLibrary.open('${basePath}/debug/bottom_rs_lib_ffi.dll');
   }
   else {
     throw _UnsupportedPlatform('${Platform.operatingSystem} is not supported!');
