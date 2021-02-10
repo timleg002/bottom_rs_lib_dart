@@ -12,7 +12,7 @@ pub trait CCharFFI {
 impl StrFFI for str {
     fn to_c_char(&self) -> *const c_char {
         CString::new(self.as_bytes())
-            .expect("qffi::to not w-working🥺")
+            .expect("qffi::to not w-working")
             .to_owned()
             .as_ptr()
     }
@@ -23,7 +23,7 @@ impl CCharFFI for *const c_char {
         unsafe {
             &CStr::from_ptr(*self)
                 .to_str()
-                .expect("qffi::from not w-working🥺")
+                .expect("qffi::from not w-working")
         }
     }
 }
