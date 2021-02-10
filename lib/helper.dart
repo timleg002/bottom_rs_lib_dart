@@ -35,11 +35,10 @@ ffi.DynamicLibrary universalLoad({String basePath = 'target'}) {
     // iOS is statically linked, so it is the same as the current process.
     return ffi.DynamicLibrary.process();
   }
-  /* //TODO macOS
+  //TODO macOS
   else if (Platform.isMacOS) {
     return DynamicLibrary.open('${basePath}libbottom_rs_lib_ffi.dylib');
   }
-  */
   else if (Platform.isWindows) {
     return ffi.DynamicLibrary.open('${basePath}/debug/bottom_rs_lib_ffi.dll');
   }
